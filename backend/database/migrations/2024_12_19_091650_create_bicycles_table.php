@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('bicycles', function (Blueprint $table) {
             $table->id();
+            $table->string("name", 80);
+            $table->float("wheel_size");
+            $table->integer("gears");
+            $table->string("sex", 10);
+            $table->string("type", 10);
+            $table->string("size", 10)->nullable()->default(null);
+            $table->string("color", 20)->nullable()->default(null);
+            $table->foreignId("manufacturer_id")->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
