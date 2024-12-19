@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('manufacturers', function (Blueprint $table) {
             $table->id();
             $table->string("name", 20);
-            $table->string("website", 255)->nullable();
+            $table->string("website", 255)->nullable()->default(null);
             $table->timestamps();
             $table->softDeletes();
         });
